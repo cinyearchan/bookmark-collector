@@ -1,0 +1,31 @@
+{
+  "name": "bookmark-collector",
+  "version": "0.0.1",
+  "description": "bookmark collector",
+  "manifest_version": 2,
+  "icons": {
+    "16": "./icon.png",
+    "32": "./icon.png"
+  },
+  "background": {
+    "persistent": false,
+    "page": "background.html"
+  },
+  "permissions": [
+    "activeTab",
+    "tabs",
+    "bookmarks"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": ["jquery.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "bookmark-collector",
+    "default_icon": "icon.png"
+  }
+}
